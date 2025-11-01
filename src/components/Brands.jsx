@@ -6,25 +6,42 @@ import brandNova from '../assets/brand-nova.svg';
 import brandOrbit from '../assets/brand-orbit.svg';
 import styles from './Brands.module.css';
 
-const brands = [
-  { name: 'MetaLab', logo: brandMeta },
-  { name: 'Fiber Labs', logo: brandFiber },
-  { name: 'Delta Ventures', logo: brandDelta },
-  { name: 'Peak Systems', logo: brandPeak },
-  { name: 'Nova Research', logo: brandNova },
-  { name: 'Orbit Studio', logo: brandOrbit },
+const rows = [
+  [
+    { name: 'MetaLab', logo: brandMeta },
+    { name: 'Fiber Labs', logo: brandFiber },
+    { name: 'Delta Ventures', logo: brandDelta },
+  ],
+  [
+    { name: 'Peak Systems', logo: brandPeak },
+    { name: 'Nova Research', logo: brandNova },
+    { name: 'Orbit Studio', logo: brandOrbit },
+  ],
 ];
 
 export default function Brands() {
   return (
     <section className={styles.brands}>
       <div className={styles.container}>
-        <p className={styles.caption}>A few brands that trusted my process</p>
-        <div className={styles.logoGrid}>
-          {brands.map((brand) => (
-            <img key={brand.name} src={brand.logo} alt={brand.name} />
+        <div className={styles.captionBlock}>
+          <span className={styles.marker} aria-hidden="true">
+            x
+          </span>
+          <span className={styles.captionDivider} aria-hidden="true" />
+          <p className={styles.caption}>A few brands I have worked with</p>
+        </div>
+        <div className={styles.logoGroup}>
+          {rows.map((row, rowIndex) => (
+            <div key={rowIndex} className={styles.logoRow}>
+              {row.map((brand) => (
+                <img key={brand.name} src={brand.logo} alt={brand.name} />
+              ))}
+            </div>
           ))}
         </div>
+        <span className={`${styles.marker} ${styles.bottomMarker}`} aria-hidden="true">
+          x
+        </span>
       </div>
     </section>
   );

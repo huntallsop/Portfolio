@@ -1,61 +1,94 @@
-.about{
-  padding:0 var(--space-24);
+.about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.container{
-  max-width:760px;
-  margin:0 auto;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-32);
+.container {
+  width: min(1150px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-45);
 }
 
-.divider{
-  width:1px;
-  height:var(--space-64);
-  margin:0 auto;
-  background:linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--color-divider) 0%, transparent) 0%,
-    var(--color-divider) 50%,
-    color-mix(in srgb, var(--color-divider) 0%, transparent) 100%
-  );
+.greeting {
+  display: flex;
+  gap: var(--space-20);
+  align-items: center;
+  justify-content: center;
 }
 
-.copy{
-  font-size:var(--fs-body-lg);
-  line-height:var(--lh-body-lg);
-  color:var(--color-text-muted);
-  margin:0;
+.greetingDivider {
+  width: 1px;
+  height: 120px;
+  background: rgba(45, 45, 45, 0.6);
 }
 
-.qualifyList{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:var(--space-12);
-  list-style:none;
-  margin:0;
-  padding:0;
+.greetingText {
+  font-family: 'Instrument Serif', var(--font-serif);
+  font-size: 30px;
+  color: var(--color-text);
 }
 
-.qualifyChip{
-  padding:var(--space-12) var(--space-20);
-  border-radius:var(--radius-pill);
-  background:var(--color-surface);
-  box-shadow:var(--shadow-elevated);
-  font-family:var(--font-sans);
-  font-weight:600;
-  font-size:13px;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  color:var(--color-text);
+.bodyRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-48);
 }
 
-@media (max-width:640px){
-  .copy{
-    font-size:18px;
-    line-height:30px;
+.chipColumn {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-45);
+  align-items: center;
+}
+
+.chipItem {
+  display: inline-flex;
+  background: rgba(45, 45, 45, 0.6);
+  color: #fff;
+  border-radius: 100px;
+  box-shadow: var(--shadow-elevated);
+  padding: 10px 16px;
+  font-family: 'Roboto', var(--font-roboto);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.chipItem span {
+  display: inline-flex;
+}
+
+.copy {
+  font-family: 'Instrument Serif', var(--font-serif);
+  font-size: 27px;
+  line-height: 41px;
+  color: #000;
+  text-align: center;
+  max-width: 571px;
+}
+
+@media (max-width: 1024px) {
+  .bodyRow {
+    flex-direction: column;
+    gap: var(--space-32);
+  }
+
+  .chipColumn {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-16);
+  }
+
+  .copy {
+    order: -1;
   }
 }

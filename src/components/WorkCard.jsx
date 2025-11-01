@@ -1,27 +1,25 @@
 import styles from './WorkCard.module.css';
 
-export default function WorkCard({ image, title, description, chips, ctaLabel, ctaHref }) {
+export default function WorkCard({ image, chips, heading, description }) {
   return (
     <article className={styles.card}>
-      <div className={styles.mediaWrap}>
+      <div className={styles.media}>
         <img src={image} alt="" aria-hidden="true" />
-        <div className={styles.overlay} />
-        <div className={styles.chipRow}>
+        <div className={styles.gradient} aria-hidden="true" />
+        <div className={styles.chips}>
           {chips.map((chip) => (
             <span key={chip} className={styles.chip}>
               {chip}
             </span>
           ))}
         </div>
-      </div>
-      <div className={styles.body}>
-        <div>
-          <h3 className={styles.title}>{title}</h3>
+        <div className={styles.bottomText}>
+          <div className={styles.heading}>
+            <span>{heading[0]}</span>
+            <span>{heading[1]}</span>
+          </div>
           <p className={styles.description}>{description}</p>
         </div>
-        <a className={styles.link} href={ctaHref}>
-          {ctaLabel}
-        </a>
       </div>
     </article>
   );

@@ -9,14 +9,17 @@ import styles from './App.module.css';
 export default function App() {
   return (
     <div className={styles.app}>
-      <Header />
-      <main className={styles.main}>
-        <Hero />
-        <Brands />
-        <WorkList />
-        <About />
-      </main>
-      <CTASection />
+      <div className={styles.canvas} aria-hidden="true" />
+      <div className={styles.shell}>
+        <Header />
+        <main className={styles.main}>
+          <Hero />
+          <Brands />
+          <WorkList />
+          <About />
+        </main>
+        <CTASection />
+      </div>
     </div>
   );
 }
