@@ -1,176 +1,146 @@
-.hero{
-  position:relative;
-  padding:var(--space-120) var(--space-24) var(--space-100);
-  overflow:hidden;
+.hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.container{
-  max-width:var(--container-max);
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  align-items:center;
-  gap:var(--space-64);
+.glow {
+  position: absolute;
+  inset: -320px -240px -120px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0))
+      no-repeat,
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0))
+      no-repeat;
+  background-size: 800px 800px, 900px 900px;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.copy{
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-24);
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(800px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+  text-align: center;
 }
 
-.eyebrow{
-  font-size:var(--fs-body);
-  line-height:var(--lh-body);
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  color:var(--color-text-muted);
+.title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-29);
+  font-family: 'Instrument Serif', var(--font-serif);
+  font-size: 60px;
+  line-height: 1;
+  color: var(--color-text);
 }
 
-.title{
-  font-family:var(--font-serif);
-  font-size:var(--fs-hero);
-  line-height:var(--lh-hero);
-  margin:0;
-  letter-spacing:-0.01em;
+.titleLine {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-24);
+  flex-wrap: wrap;
 }
 
-.subtitle{
-  display:block;
-  font-style:italic;
-  opacity:0.6;
-  margin-top:var(--space-12);
+.text {
+  display: inline-flex;
+  align-items: center;
 }
 
-.description{
-  font-size:var(--fs-body-lg);
-  line-height:var(--lh-body-lg);
-  max-width:540px;
-  color:var(--color-text-muted);
+.em {
+  font-style: italic;
+  color: rgba(45, 45, 45, 0.6);
 }
 
-.actions{
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-24);
-  align-items:flex-start;
+.portraitChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
 }
 
-.descriptorList{
-  display:flex;
-  flex-wrap:wrap;
-  gap:var(--space-12);
-  padding:0;
-  margin:0;
-  list-style:none;
+.portraitFrame {
+  position: relative;
+  width: 150px;
+  height: 88px;
+  border-radius: 99.5px;
+  background: var(--color-black);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.descriptorChip{
-  font-family:var(--font-sans);
-  font-weight:700;
-  font-size:13px;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  padding:var(--space-12) var(--space-20);
-  border-radius:var(--radius-pill);
-  color:var(--color-white);
-  background:var(--color-chip-overlay);
-  backdrop-filter:blur(12.5px);
-  border:1px solid var(--color-glass-border-strong);
+.portraitFrame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 6px solid #040612;
+  pointer-events: none;
 }
 
-.portraitColumn{
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-24);
-  align-items:flex-end;
+.portraitFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.glassChip{
-  padding:var(--space-12) var(--space-20);
-  border-radius:var(--radius-pill);
-  background:var(--color-chip-overlay);
-  color:var(--color-white);
-  font-size:13px;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  font-weight:600;
-  backdrop-filter:blur(12.5px);
-  border:1px solid var(--color-glass-border-strong);
+.comma {
+  font-family: 'Inter', var(--font-inter);
+  font-size: 60px;
+  color: var(--color-text);
 }
 
-.portraitCard{
-  padding:var(--space-16);
-  background:var(--color-surface-2);
-  border-radius:var(--radius-md);
-  box-shadow:var(--shadow-card);
-  max-width:360px;
-  width:100%;
+.description {
+  font-family: 'Instrument Sans', var(--font-sans);
+  font-size: 20px;
+  line-height: 33px;
+  color: var(--color-text-muted);
+  max-width: 620px;
 }
 
-.portraitCard img{
-  width:100%;
-  border-radius:calc(var(--radius-md) - var(--space-8));
-  object-fit:cover;
-  object-position:center;
-  display:block;
+.cta {
+  margin-top: var(--space-8);
+  font-family: 'Roboto', var(--font-roboto);
 }
 
-.blob{
-  position:absolute;
-  top:-120px;
-  right:-100px;
-  width:520px;
-  height:520px;
-  pointer-events:none;
+.cta svg {
+  margin-left: var(--space-8);
 }
 
-@media (max-width:1024px){
-  .container{
-    grid-template-columns:1fr;
-    gap:var(--space-48);
+@media (max-width: 768px) {
+  .title {
+    font-size: 44px;
   }
 
-  .portraitColumn{
-    align-items:center;
+  .portraitFrame {
+    width: 130px;
+    height: 78px;
   }
 
-  .hero{
-    padding:var(--space-100) var(--space-24) var(--space-88);
+  .comma {
+    font-size: 44px;
   }
 
-  .blob{
-    top:-160px;
-    right:-160px;
+  .inner {
+    gap: var(--space-20);
   }
 }
 
-@media (max-width:640px){
-  .title{
-    font-size:42px;
+@media (max-width: 520px) {
+  .title {
+    font-size: 36px;
   }
 
-  .subtitle{
-    margin-top:var(--space-8);
-  }
-
-  .description{
-    font-size:18px;
-    line-height:30px;
-  }
-
-  .actions{
-    width:100%;
-  }
-
-  .portraitCard{
-    max-width:100%;
-  }
-
-  .blob{
-    width:420px;
-    height:420px;
-    top:-200px;
-    right:-220px;
+  .portraitFrame {
+    width: 120px;
+    height: 72px;
   }
 }

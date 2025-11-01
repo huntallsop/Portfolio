@@ -1,42 +1,38 @@
 import heroPortrait from '../assets/hero-portrait.svg';
 import PrimaryButton from './PrimaryButton.jsx';
-import GradientBlob from './decor/GradientBlob.jsx';
+import ArrowIcon from './icons/ArrowIcon.jsx';
 import styles from './Hero.module.css';
-
-const descriptors = ['Product design', 'Design systems', 'Research'];
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <GradientBlob className={styles.blob} />
-      <div className={styles.container}>
-        <div className={styles.copy}>
-          <p className={styles.eyebrow}>Product Designer • Utah, USA</p>
-          <h1 className={styles.title}>
-            Hello, I’m Hunter
-            <span className={styles.subtitle}>— building digital experiences with care.</span>
-          </h1>
-          <p className={styles.description}>
-            I combine research, systems thinking, and prototypes to help teams move from fuzzy ideas to confident launches. Let’s
-            craft something enduring together.
-          </p>
-          <div className={styles.actions}>
-            <PrimaryButton href="#work">View case studies</PrimaryButton>
-            <ul className={styles.descriptorList}>
-              {descriptors.map((item) => (
-                <li key={item} className={styles.descriptorChip}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className={styles.portraitColumn}>
-          <div className={styles.glassChip}>Currently open for collaborations</div>
-          <div className={styles.portraitCard}>
-            <img src={heroPortrait} alt="Stylised portrait representing Hunter Allsop" />
-          </div>
-        </div>
+      <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.inner}>
+        <h1 className={styles.title}>
+          <span className={styles.titleLine}>
+            <span className={styles.text}>I'm </span>
+            <span className={styles.em}>Hunter</span>
+            <span className={styles.portraitChip}>
+              <span className={styles.portraitFrame}>
+                <img src={heroPortrait} alt="Hunter Allsop" />
+              </span>
+              <span className={styles.comma} aria-hidden="true">,</span>
+            </span>
+          </span>
+          <span className={styles.titleLine}>
+            <span className={styles.text}>a </span>
+            <span className={styles.em}>product</span>
+            <span className={styles.text}> Designer</span>
+          </span>
+        </h1>
+        <p className={styles.description}>
+          For the past 7 years, I&apos;ve been designing meaningful digital experiences that connect user needs with business
+          strategy.
+        </p>
+        <PrimaryButton className={styles.cta} href="mailto:hunter@design.studio">
+          Let&apos;s connect
+          <ArrowIcon />
+        </PrimaryButton>
       </div>
     </section>
   );

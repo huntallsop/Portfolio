@@ -5,38 +5,28 @@ import styles from './WorkList.module.css';
 
 const projects = [
   {
+    id: 'gold-point-systems-1',
     image: workCanvas,
-    title: 'Canvas OS — Enterprise workflow system',
-    description:
-      'Led a redesign of a lending operations platform, shaping modular UI patterns and analytics that unlocked faster onboarding for 1,200+ team members.',
-    chips: ['Design strategy', 'Systems thinking'],
-    ctaLabel: 'View full project →',
-    ctaHref: '#',
+    chips: ['Product design', 'User research'],
+    heading: ['Gold Point', 'Systems'],
+    description: 'Gold Point Systems offers easy to use tools to track and manage banking transactions.',
   },
   {
+    id: 'gold-point-systems-2',
     image: workLabs,
-    title: 'Launch Labs — Experimentation toolkit',
-    description:
-      'Brought researchers, PMs, and engineers into a shared space with guided testing scripts, insight libraries, and prototypes that ship clarity.',
-    chips: ['Research', 'Prototyping'],
-    ctaLabel: 'Explore case study →',
-    ctaHref: '#',
+    chips: ['Product design', 'User research'],
+    heading: ['Gold Point', 'Systems'],
+    description: 'Gold Point Systems offers easy to use tools to track and manage banking transactions.',
   },
 ];
 
 export default function WorkList() {
   return (
-    <section className={styles.work} id="work">
+    <section className={styles.work}>
       <div className={styles.container}>
-        <header className={styles.header}>
-          <p className={styles.eyebrow}>Selected work</p>
-          <h2 className={styles.heading}>Helping product teams move from concept to clarity</h2>
-        </header>
-        <div className={styles.grid}>
-          {projects.map((project) => (
-            <WorkCard key={project.title} {...project} />
-          ))}
-        </div>
+        {projects.map((project) => (
+          <WorkCard key={project.id} {...project} />
+        ))}
       </div>
     </section>
   );
