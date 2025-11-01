@@ -1,0 +1,25 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="labs-bg" x1="80" y1="60" x2="720" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5A5F65"/>
+      <stop offset="0.5" stop-color="#33ACF5"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <radialGradient id="labs-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 220) scale(220 180)">
+      <stop offset="0" stop-color="#F9F9F9" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#F9F9F9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="labs-overlay" x1="0" y1="260" x2="0" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#04040F" stop-opacity="0"/>
+      <stop offset="1" stop-color="#04040F" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="24" fill="#EAEAEA"/>
+  <rect x="16" y="16" width="768" height="418" rx="20" fill="url(#labs-bg)"/>
+  <ellipse cx="400" cy="220" rx="280" ry="200" fill="url(#labs-glow)"/>
+  <path d="M160 140H640" stroke="#F9F9F9" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round"/>
+  <path d="M160 200H640" stroke="#F9F9F9" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round"/>
+  <path d="M160 260H640" stroke="#F9F9F9" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round"/>
+  <path d="M160 320H640" stroke="#F9F9F9" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round"/>
+  <rect width="800" height="450" rx="24" fill="url(#labs-overlay)"/>
+</svg>

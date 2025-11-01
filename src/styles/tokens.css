@@ -1,0 +1,52 @@
+:root{
+  /* Colors (mapped from Figma) */
+  --color-text:#2d2d2d;
+  --color-text-muted:#5a5f65;
+  --color-bg:#f9f9f9;
+  --color-bg-alt:#141414;
+  --color-surface:#eaeaea;
+  --color-surface-2:#edeef0;
+  --color-accent:#33acf5;
+  --color-chip-overlay:rgba(45,45,45,0.6);
+  --color-button:#3d3d3d;
+  --color-button-hover:#2a2a2a;
+  --color-white:#ffffff;
+  --color-black:#04040f;
+  --color-text-on-dark:rgba(249,249,249,0.72);
+  --color-glass-surface:rgba(255,255,255,0.85);
+  --color-glass-border:rgba(255,255,255,0.35);
+  --color-glass-border-strong:rgba(255,255,255,0.6);
+  --color-divider:rgba(45,45,45,0.3);
+
+  /* Typography */
+  --font-serif:"Instrument Serif", serif;
+  --font-sans:"Instrument Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-inter:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-roboto:"Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+
+  /* Type scale */
+  --fs-display:70px; --lh-display:1;
+  --fs-hero:60px;    --lh-hero:1;
+  --fs-body-lg:20px; --lh-body-lg:33px;
+  --fs-body:16px;    --lh-body:24px;
+
+  /* Radii */
+  --radius-md:12px;
+  --radius-pill:100px;
+
+  /* Shadows */
+  --shadow-elevated:6px 7px 14px rgba(0,0,0,0.21);
+  --shadow-card:6px 6px 28px rgba(13,13,13,0.32);
+
+  /* Spacing scale */
+  --space-4:4px; --space-8:8px; --space-12:12px; --space-14:14px;
+  --space-16:16px; --space-20:20px; --space-24:24px; --space-29:29px;
+  --space-32:32px; --space-36:36px; --space-38:38px; --space-44:44px;
+  --space-45:45px; --space-48:48px; --space-60:60px; --space-64:64px;
+  --space-88:88px; --space-100:100px; --space-110:110px; --space-120:120px;
+  --space-150:150px; --space-250:250px;
+
+  /* Layout */
+  --container-max:1150px;
+  --section-gap:60px;
+}

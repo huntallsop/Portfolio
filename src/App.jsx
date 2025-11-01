@@ -1,19 +1,22 @@
-import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout.jsx';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import CaseStudies from './pages/CaseStudies.jsx';
-import Contact from './pages/Contact.jsx';
+import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
+import Brands from './components/Brands.jsx';
+import WorkList from './components/WorkList.jsx';
+import About from './components/About.jsx';
+import CTASection from './components/CTASection.jsx';
+import styles from './App.module.css';
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/contact" element={<Contact />} />
-      </Route>
-    </Routes>
+    <div className={styles.app}>
+      <Header />
+      <main className={styles.main}>
+        <Hero />
+        <Brands />
+        <WorkList />
+        <About />
+      </main>
+      <CTASection />
+    </div>
   );
 }
