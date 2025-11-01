@@ -1,0 +1,61 @@
+.about{
+  padding:0 var(--space-24);
+}
+
+.container{
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-32);
+}
+
+.divider{
+  width:1px;
+  height:var(--space-64);
+  margin:0 auto;
+  background:linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-divider) 0%, transparent) 0%,
+    var(--color-divider) 50%,
+    color-mix(in srgb, var(--color-divider) 0%, transparent) 100%
+  );
+}
+
+.copy{
+  font-size:var(--fs-body-lg);
+  line-height:var(--lh-body-lg);
+  color:var(--color-text-muted);
+  margin:0;
+}
+
+.qualifyList{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:var(--space-12);
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.qualifyChip{
+  padding:var(--space-12) var(--space-20);
+  border-radius:var(--radius-pill);
+  background:var(--color-surface);
+  box-shadow:var(--shadow-elevated);
+  font-family:var(--font-sans);
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--color-text);
+}
+
+@media (max-width:640px){
+  .copy{
+    font-size:18px;
+    line-height:30px;
+  }
+}

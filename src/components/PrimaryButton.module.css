@@ -1,0 +1,27 @@
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--space-8);
+  padding:0 var(--space-16);
+  height:40px;
+  border-radius:var(--radius-pill);
+  font-family:var(--font-roboto);
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  background:var(--color-button);
+  color:var(--color-white);
+  box-shadow:var(--shadow-elevated);
+  transition:background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover{
+  background:var(--color-button-hover);
+  transform:translateY(-1px);
+}
+
+.button:active{
+  transform:translateY(0);
+}
