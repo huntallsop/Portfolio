@@ -7,7 +7,7 @@ export function Group() {
     <div style={{
       height: 88, width: 150, borderRadius: 100,
       background: "#04040f", border: "6px solid #040612",
-      boxShadow: "6px 6px 28px rgba(13,13,13,0.32)", overflow: "hidden",
+      boxShadow: "rgba(13, 13, 13, 0.52) 11px 10px 16px 0px", overflow: "hidden",
       display:"flex", alignItems:"center", justifyContent:"center"
     }}>
       <img

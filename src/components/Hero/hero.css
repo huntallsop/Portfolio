@@ -9,7 +9,11 @@
 .hero .span { color: #2d2d2d99; font-style: italic; }
 .hero .frame-3 { display: inline-flex; gap: 7px; align-items: center; }
 .hero .text-wrapper-2 { font-family: "Inter", sans-serif; font-size: 60px; color: #2d2d2d; }
-.hero .group-variant { width: 150px; height: 88px; }
+.hero .group-variant {
+  width: 150px;
+  height: 88px;
+  box-shadow: rgba(13, 13, 13, 0.52) 11px 10px 16px 0px;
+}
 .hero .p {
   font-family: "Instrument Sans", sans-serif; font-size: 20px; line-height: 33px;
   max-width: 620px; color: #5a5f65;
