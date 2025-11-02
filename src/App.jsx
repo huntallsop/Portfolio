@@ -1,5 +1,5 @@
 import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
+import Hero from './components/Hero/Hero.jsx';
 import Brands from './components/Brands.jsx';
 import WorkList from './components/WorkList.jsx';
 import About from './components/About.jsx';

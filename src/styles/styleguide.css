@@ -1,0 +1,5 @@
+:root{
+  --variable-collection-black: rgba(45,45,45,1);
+  --variable-collection-white: rgba(249,249,249,1);
+  --GPS-schemes-on-primary: var(--variable-collection-white);
+}
