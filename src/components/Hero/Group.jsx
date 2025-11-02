@@ -1,5 +1,6 @@
 import React from "react";
-import portrait from "../../assets/image.svg";
+import portrait from "../../assets/Hunterpill.png";
+import placeholder from "../../assets/image.svg";
 
 export function Group() {
   return (
@@ -9,7 +10,15 @@ export function Group() {
       boxShadow: "6px 6px 28px rgba(13,13,13,0.32)", overflow: "hidden",
       display:"flex", alignItems:"center", justifyContent:"center"
     }}>
-      <img src={portrait} alt="Portrait" style={{ width:"100%", height:"100%", objectFit:"cover" }}/>
+      <img
+        src={portrait}
+        alt="Portrait"
+        onError={(event) => {
+          event.currentTarget.onerror = null;
+          event.currentTarget.src = placeholder;
+        }}
+        style={{ width:"100%", height:"100%", objectFit:"cover" }}
+      />
     </div>
   );
 }

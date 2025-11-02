@@ -1,7 +1,7 @@
 import React from "react";
 import { Group } from "./Group";
 import callMade from "../../assets/call-made.svg";
-import variant2 from "../../assets/variant-2.svg";
+import variant2 from "../../assets/Bluepill.png";
 import "./hero.css";
 
 export default function Hero() {
