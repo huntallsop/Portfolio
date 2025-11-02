@@ -28,7 +28,7 @@ export default function Hero() {
             <div className="div-2">Designer</div>
           </div>
         </div>
-        <p className="p">
+        <p className="p" style={{ marginTop: "4px", marginBottom: "0px" }}>
           For the past 7 years, I’ve been designing meaningful digital experiences
           that connect user needs with business strategy.
         </p>
