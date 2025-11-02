@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="frame">
         <div className="div">
           <div className="frame-2">
-            <p className="div-2">
+            <p className="div-2" style={{ marginTop: 0, marginBottom: 0 }}>
               <span className="text-wrapper">I’m </span>
               <span className="span">Hunter</span>
             </p>
@@ -20,7 +20,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="frame-2">
-            <p className="div-2">
+            <p className="div-2" style={{ marginTop: 0, marginBottom: 0 }}>
               <span className="text-wrapper">a </span>
               <span className="span">product</span>
             </p>
