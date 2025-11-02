@@ -33,7 +33,7 @@ export default function Hero() {
           that connect user needs with business strategy.
         </p>
       </div>
-      <button className="button">
+      <button className="button" type="button">
         <div className="state-layer">
           <div className="label-text">Let’s connect</div>
           <img className="call-made" alt="Call made" src={callMade} />

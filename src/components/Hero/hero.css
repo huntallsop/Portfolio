@@ -21,7 +21,7 @@
 }
 .hero .button {
   background: #2d2d2d; color: white; border-radius: 100px;
-  height: 40px; padding: 0 24px; border: none; cursor: pointer;
+  height: 40px; padding: 0 16px; border: none; cursor: pointer;
   font-family: "Roboto", sans-serif; box-shadow: 6px 7px 14px #00000036;
 }
 .state-layer { display:flex; gap:8px; align-items:center; justify-content:center; padding:10px 16px; }
