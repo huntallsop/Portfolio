@@ -1,6 +1,14 @@
-<svg width="150" height="88" viewBox="0 0 150 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="150" height="88" rx="44" fill="#1F2230"/>
-  <ellipse cx="75" cy="44" rx="40" ry="35" fill="#2E3244"/>
-  <path d="M75 20C62.2975 20 51.8975 30.4 51.8975 43.1025C51.8975 55.805 62.2975 66.205 75 66.205C87.7025 66.205 98.1025 55.805 98.1025 43.1025C98.1025 30.4 87.7025 20 75 20ZM75 56.41C66.6025 56.41 59.6925 49.5 59.6925 41.1025C59.6925 32.705 66.6025 25.795 75 25.795C83.3975 25.795 90.3075 32.705 90.3075 41.1025C90.3075 49.5 83.3975 56.41 75 56.41Z" fill="#3F445D"/>
-  <circle cx="75" cy="34" r="8" fill="#535A7A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+  <rect width="150" height="200" fill="url(#grad)" rx="24" ry="24" />
+  <g fill="none" stroke="#4b5563" stroke-width="2">
+    <circle cx="75" cy="80" r="32" />
+    <path d="M30 166c12-28 38-46 45-46h0c7 0 33 18 45 46" stroke-linecap="round" />
+  </g>
+  <text x="50%" y="188" text-anchor="middle" font-family="'Instrument Sans', sans-serif" font-size="12" fill="#9ca3af">Portrait</text>
 </svg>
