@@ -1,0 +1,5 @@
+<svg width="150" height="88" viewBox="0 0 150 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="148" height="86" rx="43" fill="#FFFFFF" fill-opacity="0.1" stroke="#2D2D2D" stroke-dasharray="8 8" stroke-width="2"/>
+  <rect x="26" y="26" width="98" height="36" rx="18" fill="#2D2D2D"/>
+  <text x="75" y="48" text-anchor="middle" dominant-baseline="middle" font-family="Inter, sans-serif" font-size="14" fill="#FFFFFF">Chip</text>
+</svg>

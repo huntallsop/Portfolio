@@ -1,0 +1,23 @@
+.hero {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 24px; padding: 60px 20px; text-align: center;
+}
+.hero .frame { display: flex; flex-direction: column; gap: 20px; width: 100%; align-items: center; }
+.hero .div   { display: flex; flex-direction: column; gap: 29px; width: 100%; align-items: center; }
+.hero .frame-2 { display: inline-flex; gap: 24px; align-items: center; }
+.hero .div-2 { font-family: "Instrument Serif", serif; font-size: 60px; font-weight: 400; color: #2d2d2d; }
+.hero .span { color: #2d2d2d99; font-style: italic; }
+.hero .frame-3 { display: inline-flex; gap: 7px; align-items: center; }
+.hero .text-wrapper-2 { font-family: "Inter", sans-serif; font-size: 60px; color: #2d2d2d; }
+.hero .group-variant { width: 150px; height: 88px; }
+.hero .p {
+  font-family: "Instrument Sans", sans-serif; font-size: 20px; line-height: 33px;
+  max-width: 620px; color: #5a5f65;
+}
+.hero .button {
+  background: #2d2d2d; color: white; border-radius: 100px;
+  height: 40px; padding: 0 24px; border: none; cursor: pointer;
+  font-family: "Roboto", sans-serif; box-shadow: 6px 7px 14px #00000036;
+}
+.state-layer { display:flex; gap:8px; align-items:center; justify-content:center; padding:10px 16px; }
+.call-made { width:20px; height:20px; }
