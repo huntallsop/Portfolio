@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
-// Prefer robust URL resolution:
 const footerBgUrl = new URL("../../assets/footer-bg.png", import.meta.url).toString();
+// Fallback if needed:
+// import footerBg from "../../assets/footer-bg.png";
+// const footerBgUrl = footerBg;
 import "./footer.css";
 
 // Inline arrow icon (no external imports)
@@ -39,14 +41,35 @@ export default function Footer() {
   const bgRef = useRef(null);
 
   useEffect(() => {
-    if (bgRef.current) {
-      // Overwrite any previous inline data: URL
-      bgRef.current.style.backgroundImage = `url("${footerBgUrl}")`;
-      bgRef.current.style.opacity = "0.18";
-      bgRef.current.style.backgroundRepeat = "no-repeat";
-      bgRef.current.style.backgroundSize = "cover";
-      bgRef.current.style.backgroundPosition = "50% 50%";
-    }
+    const el = bgRef.current;
+    if (!el) return;
+
+    const applyRealBg = () => {
+      el.style.backgroundImage = `url("${footerBgUrl}")`;
+      el.style.opacity = "0.18";
+      el.style.backgroundRepeat = "no-repeat";
+      el.style.backgroundSize = "cover";
+      el.style.backgroundPosition = "50% 50%";
+    };
+
+    // 1) Remove any existing inline data URL
+    el.style.removeProperty("background-image");
+    applyRealBg();
+
+    // 2) If some script tries to put the data: URL back, override it again
+    const mo = new MutationObserver(() => {
+      const v = el.style.backgroundImage || "";
+      if (
+        v.startsWith("url(\"data:") ||
+        v.startsWith("url('data:") ||
+        v.includes("base64,DQo=")
+      ) {
+        applyRealBg();
+      }
+    });
+    mo.observe(el, { attributes: true, attributeFilter: ["style"] });
+
+    return () => mo.disconnect();
   }, []);
 
   return (
