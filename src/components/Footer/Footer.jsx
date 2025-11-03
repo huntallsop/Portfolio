@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css";
+import footerBg from "../../assets/footer-bg.png";
 
 // Inline arrow icon (no external imports)
 function ArrowIcon() {
@@ -35,20 +36,16 @@ function Rule() {
 export default function Footer() {
   console.log("[Footer] mounted");
 
-  // Try to require the background image if it exists; otherwise fallback
-  let bgSrc = null;
-  try {
-    // Will succeed only if you add src/assets/footer-bg.png
-    // (case-sensitive). If missing, we catch and keep bgSrc = null.
-    // @ts-ignore
-    bgSrc = require("../../assets/footer-bg.png");
-  } catch (e) {}
-
   return (
-    <footer
-      className={`footer ${bgSrc ? "footer--with-image" : "footer--no-image"}`}
-      style={bgSrc ? { ["--footer-bg-image"]: `url(${bgSrc})` } : undefined}
-    >
+    <footer className="footer">
+      <div
+        className="footer-bg-overlay"
+        style={{
+          backgroundImage: `url(${footerBg})`,
+          opacity: 0.18,
+        }}
+      />
+
       <div className="footer-inner">
         <div className="footer-available">
           <Rule />
