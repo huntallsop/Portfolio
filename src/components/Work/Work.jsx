@@ -24,8 +24,7 @@ function BottomText() {
   return (
     <div className="work-bottom">
       <div className="work-brand" aria-label="Gold Point Systems">
-        <div>Gold Point</div>
-        <div>Systems</div>
+        <div>Gold Point systems</div>
       </div>
       <p className="work-desc">
         Gold Point Systems offers easy to use tools to track and manage banking transactions.
