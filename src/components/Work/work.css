@@ -1,28 +1,36 @@
-.work {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 0;
+/* Screen reader helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
+.work {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* Card with fixed max width similar to your Figma frame (800px) */
 .work-card {
   position: relative;
-  width: 800px;
-  height: 350px;
+  width: 100%;
+  max-width: 800px;
   border-radius: 12px;
   overflow: hidden;
-  box-sizing: border-box;
   padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .work-bg {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eaeaea;
 }
+
 .work-bg__img {
   position: absolute;
   inset: 0;
@@ -30,81 +38,84 @@
   height: 100%;
   object-fit: cover;
 }
-/* bottom gradient “shadow” similar to your Figma */
+
+/* Bottom gradient shadow like your Figma overlay */
 .work-bg__shadow {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 0; right: 0; bottom: 0;
   height: 135px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  backdrop-filter: blur(7.5px);
-  background: linear-gradient(180deg, rgba(45,45,45,0) 0%, rgba(45,45,45,0.65) 65%);
+  background: linear-gradient(
+    180deg,
+    rgba(45,45,45,0) 0%,
+    rgba(45,45,45,0.65) 100%
+  );
 }
 
+/* Chips row pinned near the bottom-left area */
 .work-chips {
-  position: relative;
   display: flex;
   gap: 11px;
+  position: absolute;
+  left: 32px;
+  bottom: 135px; /* sits above the gradient */
+  z-index: 2;
 }
+
 .work-chip {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   padding: 6px 16px;
   border-radius: 60px;
   backdrop-filter: blur(12.5px);
-  background: rgba(104,104,104,0.45);
-  box-sizing: border-box;
+  background: rgba(104,104,104,0.4);
 }
+
 .work-chip__stroke {
   position: absolute;
   inset: 0;
   border-radius: 60px;
   border: 1px solid #fff;
-  pointer-events: none;
+  opacity: .9;
 }
+
 .work-chip__text {
-  font-family: "Instrument Sans", system-ui, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.8);
+  position: relative;
+  font: 700 12px/16px "Instrument Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   letter-spacing: 0.4px;
+  color: rgba(255,255,255,0.85);
 }
 
 .work-bottom {
-  position: relative;
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 16px;
   display: flex;
   align-items: center;
   gap: 100px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
   color: #f9f9f9;
 }
+
 .work-brand {
-  font-family: "Instrument Sans", system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 35px;
-  letter-spacing: 0.1px;
-  line-height: 1.05;
+  font: 700 35px/1.1 "Instrument Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
+
 .work-desc {
-  flex: 1;
   margin: 0;
-  font-family: "Instrument Sans", system-ui, sans-serif;
-  font-size: 16px;
-  color: rgba(249,249,249,0.8);
+  font: 400 16px/1.5 "Instrument Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color: rgba(249,249,249,0.85);
 }
 
-@media (max-width: 860px) {
-  .work-card { width: 100%; height: 360px; }
-  .work-bottom { gap: 24px; padding-right: 8px; }
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .work-bottom { gap: 32px; }
   .work-brand { font-size: 28px; }
+  .work-desc { font-size: 15px; }
 }
-
-.work { outline: 3px dashed magenta; margin-top: 40px; }
-.work-card { outline: 2px solid #00d1b2; background: rgba(0,0,0,0.1); }
-.work-bg__img { background: #222; }
+@media (max-width: 640px) {
+  .work-chips { left: 16px; bottom: 120px; }
+  .work-bottom { left: 16px; right: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
+}
