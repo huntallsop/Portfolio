@@ -1,0 +1,112 @@
+.footer {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: #f9f9f9;
+  background: #141414;
+  overflow: hidden;
+}
+
+/* Background image (optional) */
+.footer--with-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--footer-bg-image);
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0.18;
+  transform: scaleY(-1); /* mirrors the figma look */
+}
+
+/* Gradient fallback when no image is present */
+.footer--no-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 40% at 50% 40%, rgba(255,255,255,0.08), rgba(0,0,0,0) 70%);
+  opacity: 0.7;
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.footer-available {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-rule {
+  display: inline-flex;
+  width: 52px;
+  height: 1px;
+  opacity: 0.9;
+}
+.footer-rule svg {
+  width: 100%;
+  height: 1px;
+}
+.footer-rule path {
+  stroke: #f9f9f9;
+}
+
+.footer-available__text {
+  margin: 0;
+  font-family: "Instrument Serif", serif;
+  font-size: 20px;
+  letter-spacing: 0.1px;
+}
+
+.footer-headline {
+  font-family: "Instrument Serif", serif;
+  font-size: 70px;
+  line-height: 1;
+}
+.footer-headline__lets { color: #f9f9f9; }
+.footer-headline__connect { color: rgba(249,249,249,0.5); font-style: italic; }
+
+.footer-sub {
+  margin: 0;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.1px;
+  opacity: 0.95;
+}
+
+.footer-btn {
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 100px;
+  background: #3d3d3d;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 6px 7px 14px rgba(0,0,0,0.21);
+  cursor: pointer;
+  font: 500 14px/20px Roboto, system-ui, -apple-system, Segoe UI, "Helvetica Neue", Arial, "Noto Sans";
+}
+.footer-arrow {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .footer-headline { font-size: 48px; }
+  .footer-sub { font-size: 18px; }
+}
