@@ -38,10 +38,35 @@ function BottomText() {
 export default function Work() {
   console.log("[Work] mounted");
   return (
-    <section className="work" aria-labelledby="workTitle">
-      <h2 style={{ margin: "24px 0", fontFamily: "Instrument Sans, sans-serif" }}>
-        Work (debug)
-      </h2>
+    <section
+      id="work-section"
+      data-testid="work-section"
+      className="work"
+      style={{
+        outline: "4px solid red",
+        minHeight: 420,
+        marginTop: 40,
+        position: "relative",
+        background: "rgba(255,0,0,0.06)"
+      }}
+      aria-labelledby="workTitle"
+    >
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 2,
+          background: "rgba(255,255,255,0.9)",
+          border: "2px dashed #f0b",
+          padding: "8px 12px",
+          textAlign: "center",
+          fontFamily: "Instrument Sans, system-ui, sans-serif"
+        }}
+      >
+        Work (debug) — find me with: <code>#work-section</code> or <code>[data-testid="work-section"]</code>
+      </div>
+
+      {/* keep your existing card content below unchanged */}
       <div className="work-card">
         {/* Background image + blur/shadow overlay */}
         <div className="work-bg">
