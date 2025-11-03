@@ -102,3 +102,50 @@
   .footer-sub { font-size: 18px; }
 }
 
+
+/* ===== Parallax reveal wrapper ===== */
+.footer-reveal {
+  /* Taller than viewport so user can scroll to reveal the sticky footer */
+  height: 180vh; /* adjust 140–220vh to tune “reveal” distance */
+}
+
+/* The panel that pins during the scroll */
+.footer-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;       /* Fill the screen when pinned */
+  display: grid;
+  place-items: center; /* Center footer content */
+  overflow: hidden;
+}
+
+/* Base footer container (keep your existing rules; these are safe) */
+.footer {
+  position: relative;
+  width: 100%;
+  height: 100%;        /* stretch to the sticky panel */
+  background: #141414; /* black base */
+  overflow: hidden;
+}
+
+/* Background overlay image: opacity + parallax transform */
+.footer-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0.18;             /* 18% opacity as requested */
+  transform: translateY(var(--parallax-y, 0px));
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Make actual content sit above the image */
+.footer-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 100%;
+}
