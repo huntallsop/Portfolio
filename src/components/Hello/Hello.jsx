@@ -36,12 +36,12 @@ function RightStack() {
   );
 }
 
-// Thin vertical divider SVG
+// Thin horizontal divider SVG
 function Divider() {
   return (
     <div className="hello-divider" aria-hidden="true">
-      <svg viewBox="0 0 1 120" width="1" height="120" preserveAspectRatio="none">
-        <path d="M0.5 0V120" stroke="rgba(45,45,45,0.6)" />
+      <svg viewBox="0 0 120 1" width="120" height="1" preserveAspectRatio="none">
+        <path d="M0 0.5H120" stroke="rgba(45,45,45,0.6)" />
       </svg>
     </div>
   );

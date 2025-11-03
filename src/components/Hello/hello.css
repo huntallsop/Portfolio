@@ -23,8 +23,8 @@
 }
 
 .hello-divider {
-  width: 1px;
-  height: 120px;
+  width: 120px;
+  height: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
