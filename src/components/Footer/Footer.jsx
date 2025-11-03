@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 const footerBgUrl = new URL("../../assets/footer-bg.png", import.meta.url).toString();
-// Fallback if needed:
+// Fallback if bundler complains about import.meta.url:
 // import footerBg from "../../assets/footer-bg.png";
 // const footerBgUrl = footerBg;
 import "./footer.css";
@@ -37,7 +37,6 @@ function Rule() {
 }
 
 export default function Footer() {
-  console.log("[Footer] mounted");
   const bgRef = useRef(null);
 
   useEffect(() => {
@@ -45,29 +44,29 @@ export default function Footer() {
     if (!el) return;
 
     const applyRealBg = () => {
-      el.style.backgroundImage = `url("${footerBgUrl}")`;
-      el.style.opacity = "0.18";
-      el.style.backgroundRepeat = "no-repeat";
-      el.style.backgroundSize = "cover";
-      el.style.backgroundPosition = "50% 50%";
+      el.style.removeProperty("background-image");
+      el.style.setProperty("background-image", `url("${footerBgUrl}")`, "important");
+      el.style.setProperty("opacity", "0.18", "important");
+      el.style.setProperty("background-repeat", "no-repeat", "important");
+      el.style.setProperty("background-size", "cover", "important");
+      el.style.setProperty("background-position", "50% 50%", "important");
     };
 
-    // 1) Remove any existing inline data URL
-    el.style.removeProperty("background-image");
     applyRealBg();
 
-    // 2) If some script tries to put the data: URL back, override it again
     const mo = new MutationObserver(() => {
       const v = el.style.backgroundImage || "";
-      if (
-        v.startsWith("url(\"data:") ||
-        v.startsWith("url('data:") ||
-        v.includes("base64,DQo=")
-      ) {
+      if (v.includes("data:image") || v.includes("base64,DQo=")) {
         applyRealBg();
       }
     });
-    mo.observe(el, { attributes: true, attributeFilter: ["style"] });
+    mo.observe(el, { attributes: true, attributeFilter: ["style", "class"] });
+
+    queueMicrotask(applyRealBg);
+    requestAnimationFrame(applyRealBg);
+
+    console.log("[Footer] enforcing real bg:", footerBgUrl);
+    console.log("[Footer] current inline bg:", el.style.backgroundImage);
 
     return () => mo.disconnect();
   }, []);
