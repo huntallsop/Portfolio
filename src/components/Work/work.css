@@ -29,6 +29,7 @@
   border-radius: 12px;
   overflow: hidden;
   background: #eaeaea;
+  Padding-top: 0px
 }
 
 .work-bg__img {
@@ -56,8 +57,8 @@
   display: flex;
   gap: 11px;
   position: absolute;
-  left: 32px;
-  bottom: 135px; /* sits above the gradient */
+  top: 16px;
+  right: 20px; 
   z-index: 2;
 }
 
@@ -89,8 +90,8 @@
 
 .work-bottom {
   position: absolute;
-  left: 32px;
-  right: 32px;
+  left: 20px;
+  right: 20px;
   bottom: 16px;
   display: flex;
   align-items: center;
