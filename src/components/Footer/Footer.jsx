@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
-import footerBg from "../../assets/footer-bg.png";
+import React, { useEffect, useRef } from "react";
+// Prefer robust URL resolution:
+const footerBgUrl = new URL("../../assets/footer-bg.png", import.meta.url).toString();
 import "./footer.css";
 
 // Inline arrow icon (no external imports)
@@ -35,15 +36,22 @@ function Rule() {
 
 export default function Footer() {
   console.log("[Footer] mounted");
-  const overlayRef = useRef(null);
+  const bgRef = useRef(null);
+
+  useEffect(() => {
+    if (bgRef.current) {
+      // Overwrite any previous inline data: URL
+      bgRef.current.style.backgroundImage = `url("${footerBgUrl}")`;
+      bgRef.current.style.opacity = "0.18";
+      bgRef.current.style.backgroundRepeat = "no-repeat";
+      bgRef.current.style.backgroundSize = "cover";
+      bgRef.current.style.backgroundPosition = "50% 50%";
+    }
+  }, []);
 
   return (
     <footer className="footer">
-      <div
-        ref={overlayRef}
-        className="footer-bg-overlay"
-        style={{ backgroundImage: `url(${footerBg})` }}
-      />
+      <div ref={bgRef} className="footer-bg-overlay" />
       <div className="footer-inner">
         <div className="footer-available">
           <Rule />

@@ -116,3 +116,13 @@
   background-position: 50% 50%;
   opacity: 0.18; /* 18% */
 }
+
+/* Ensure the overlay itself has no conflicting background via CSS */
+.footer-bg-overlay {
+  /* background-image set by React on mount */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  /* Opacity is applied inline from React; keep here as fallback */
+  opacity: 0.18;
+}
