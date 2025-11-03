@@ -126,3 +126,11 @@
   /* Opacity is applied inline from React; keep here as fallback */
   opacity: 0.18;
 }
+
+footer.footer .footer-bg-overlay {
+  background-image: url("/src/assets/footer-bg.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: 50% 50% !important;
+  opacity: 0.18 !important;
+}
