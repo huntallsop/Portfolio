@@ -10,27 +10,6 @@
   overflow: hidden;
 }
 
-/* Background image (optional) */
-.footer--with-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--footer-bg-image);
-  background-size: cover;
-  background-position: 50% 50%;
-  opacity: 0.18;
-  transform: scaleY(-1); /* mirrors the figma look */
-}
-
-/* Gradient fallback when no image is present */
-.footer--no-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(60% 40% at 50% 40%, rgba(255,255,255,0.08), rgba(0,0,0,0) 70%);
-  opacity: 0.7;
-}
-
 .footer-inner {
   position: relative;
   z-index: 1;
@@ -109,4 +88,12 @@
 @media (max-width: 480px) {
   .footer-headline { font-size: 48px; }
   .footer-sub { font-size: 18px; }
+}
+
+.footer-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 0;
 }
