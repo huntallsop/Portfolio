@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import footerBg from "../../assets/footer-bg.png";
 import "./footer.css";
 
 // Inline arrow icon (no external imports)
@@ -34,9 +35,15 @@ function Rule() {
 
 export default function Footer() {
   console.log("[Footer] mounted");
+  const overlayRef = useRef(null);
 
   return (
     <footer className="footer">
+      <div
+        ref={overlayRef}
+        className="footer-bg-overlay"
+        style={{ backgroundImage: `url(${footerBg})` }}
+      />
       <div className="footer-inner">
         <div className="footer-available">
           <Rule />

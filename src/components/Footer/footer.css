@@ -102,3 +102,17 @@
   .footer-sub { font-size: 18px; }
 }
 
+.footer::before {
+  background-image: none;
+}
+
+.footer-bg-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0.18; /* 18% */
+}
