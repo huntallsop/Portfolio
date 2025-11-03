@@ -1,6 +1,6 @@
 .hero {
   display: flex; flex-direction: column; align-items: center;
-  gap: 24px; padding: 60px 20px; text-align: center;
+  gap: 24px; padding: 60px 0 0; text-align: center;
 }
 .hero .frame { display: flex; flex-direction: column; gap: 20px; width: 100%; align-items: center; }
 .hero .div   { display: flex; flex-direction: column; gap: 29px; width: 100%; align-items: center; }
