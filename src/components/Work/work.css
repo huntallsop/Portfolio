@@ -104,3 +104,7 @@
   .work-bottom { gap: 24px; padding-right: 8px; }
   .work-brand { font-size: 28px; }
 }
+
+.work { outline: 3px dashed magenta; margin-top: 40px; }
+.work-card { outline: 2px solid #00d1b2; background: rgba(0,0,0,0.1); }
+.work-bg__img { background: #222; }

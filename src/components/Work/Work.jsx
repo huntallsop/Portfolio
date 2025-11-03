@@ -36,8 +36,12 @@ function BottomText() {
 }
 
 export default function Work() {
+  console.log("[Work] mounted");
   return (
     <section className="work" aria-labelledby="workTitle">
+      <h2 style={{ margin: "24px 0", fontFamily: "Instrument Sans, sans-serif" }}>
+        Work (debug)
+      </h2>
       <div className="work-card">
         {/* Background image + blur/shadow overlay */}
         <div className="work-bg">
