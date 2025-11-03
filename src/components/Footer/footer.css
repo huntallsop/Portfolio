@@ -10,6 +10,18 @@
   overflow: hidden;
 }
 
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../assets/footer-bg.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+}
+
 .footer-inner {
   position: relative;
   z-index: 1;
@@ -90,10 +102,3 @@
   .footer-sub { font-size: 18px; }
 }
 
-.footer-bg-overlay {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: 50% 50%;
-  z-index: 0;
-}

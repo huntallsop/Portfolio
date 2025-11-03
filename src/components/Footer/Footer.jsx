@@ -1,6 +1,5 @@
 import React from "react";
 import "./footer.css";
-import footerBg from "../../assets/footer-bg.png";
 
 // Inline arrow icon (no external imports)
 function ArrowIcon() {
@@ -38,14 +37,6 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div
-        className="footer-bg-overlay"
-        style={{
-          backgroundImage: `url(${footerBg})`,
-          opacity: 0.18,
-        }}
-      />
-
       <div className="footer-inner">
         <div className="footer-available">
           <Rule />
