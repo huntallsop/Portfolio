@@ -1,0 +1,120 @@
+/* Accessibility helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.hello {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 20px;
+}
+
+.hello-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hello-divider {
+  width: 1px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hello-text {
+  margin: 0;
+  font-family: "Instrument Serif", serif;
+  font-size: 30px;
+  line-height: 33px;
+  color: #2d2d2d;
+  white-space: nowrap;
+}
+
+.hello-row--with-stacks {
+  gap: 48px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.hello-blurb {
+  margin: 0;
+  max-width: 571px;
+  text-align: center;
+  font-family: "Instrument Serif", serif;
+  font-size: 27px;
+  line-height: 41px;
+  color: #000;
+}
+
+.hello-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 45px;
+  height: 300px;
+  width: 160px; /* left stack approx width; right is slightly wider below */
+}
+
+.hello-stack--right { width: 200px; }
+
+.hello-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 100px;
+  backdrop-filter: blur(12.5px);
+  box-shadow: 6px 7px 14px rgba(0,0,0,0.21);
+}
+
+.hello-pill__stroke {
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  opacity: 0.9;
+}
+
+.hello-pill__text {
+  position: relative;
+  font: 500 14px/20px Roboto, system-ui, -apple-system, Segoe UI, "Helvetica Neue", Arial, "Noto Sans";
+  letter-spacing: 0.1px;
+  color: rgba(255,255,255,0.85);
+  white-space: nowrap;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .hello-row--with-stacks { gap: 24px; }
+  .hello-blurb { font-size: 22px; line-height: 34px; }
+  .hello-stack { width: 140px; gap: 28px; }
+  .hello-stack--right { width: 160px; }
+}
+@media (max-width: 700px) {
+  .hello-row--with-stacks {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .hello-stack, .hello-stack--right {
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .hello-blurb { text-align: left; }
+}
