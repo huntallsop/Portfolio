@@ -1,81 +1,47 @@
 import React from "react";
-import "./work.css";
 import background from "../../assets/LoanServicing.png";
 
-// Small pill chips reused from your Figma layout
-function Chip({ label }) {
-  return (
-    <div className="work-chip">
-      <div className="work-chip__stroke" aria-hidden="true" />
-      <span className="work-chip__text">{label}</span>
-    </div>
-  );
-}
-
-function Chips() {
-  return (
-    <div className="work-chips">
-      <Chip label="Product design" />
-      <Chip label="User research" />
-    </div>
-  );
-}
-
-function BottomText() {
-  return (
-    <div className="work-bottom">
-      <div className="work-brand">
-        <div>Gold Point</div>
-        <div>Systems</div>
-      </div>
-      <p className="work-desc">
-        Gold Point Systems offers easy to use tools to track and manage banking transactions.
-      </p>
-    </div>
-  );
-}
-
 export default function Work() {
-  console.log("[Work] mounted");
+  console.log("[Work] mounted (minimal)");
   return (
     <section
       id="work-section"
       data-testid="work-section"
-      className="work"
       style={{
-        outline: "4px solid red",
-        minHeight: 420,
-        marginTop: 40,
+        border: "6px solid #ff0066",
+        background: "rgba(255,0,102,0.06)",
+        padding: 24,
+        margin: "48px auto",
+        maxWidth: 860,
+        minHeight: 300,
         position: "relative",
-        background: "rgba(255,0,0,0.06)"
+        zIndex: 9999
       }}
-      aria-labelledby="workTitle"
     >
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 2,
-          background: "rgba(255,255,255,0.9)",
-          border: "2px dashed #f0b",
-          padding: "8px 12px",
-          textAlign: "center",
-          fontFamily: "Instrument Sans, system-ui, sans-serif"
-        }}
-      >
-        Work (debug) — find me with: <code>#work-section</code> or <code>[data-testid="work-section"]</code>
-      </div>
+      <h2 style={{margin:0, marginBottom:12, fontFamily:"Instrument Sans, system-ui, sans-serif"}}>
+        WORK SIMPLE DEBUG
+      </h2>
 
-      {/* keep your existing card content below unchanged */}
-      <div className="work-card">
-        {/* Background image + blur/shadow overlay */}
-        <div className="work-bg">
-          <img src={background} alt="" className="work-bg__img" />
-          <div className="work-bg__shadow" aria-hidden="true" />
-        </div>
+      <p style={{marginTop:0, fontFamily:"Instrument Sans, system-ui, sans-serif"}}>
+        If you can see this hot-pink box, the section is visible. Image below should load too.
+      </p>
 
-        <Chips />
-        <BottomText />
+      <div style={{
+        height: 200,
+        borderRadius: 12,
+        overflow: "hidden",
+        outline: "2px dashed #00d1b2",
+        background: "#222",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
+        <img
+          src={background}
+          alt="LoanServicing"
+          style={{width:"100%", height:"100%", objectFit:"cover"}}
+          onError={(e) => { e.currentTarget.style.opacity = 0.2; e.currentTarget.alt = "image failed to load"; }}
+        />
       </div>
     </section>
   );
