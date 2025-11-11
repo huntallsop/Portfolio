@@ -25,10 +25,10 @@ function BottomText() {
   return (
     <div className="work-bottom">
       <div className="work-brand" aria-label="Gold Point Systems">
-        <div>Gold Point systems</div>
+        <div>Gold Point Systems</div>
       </div>
       <p className="work-desc">
-        Gold Point Systems offers easy to use tools to track and manage banking transactions.
+        Gold Point Systems offers easy-to-use tools to track and manage banking transactions.
       </p>
     </div>
   );
@@ -38,14 +38,18 @@ export default function Work() {
   return (
     <section className="work" aria-labelledby="work-title">
       <h2 id="work-title" className="sr-only">Work</h2>
-      <div className="work-card">
-        <div className="work-bg">
-          <img src={background} alt="" className="work-bg__img" />
-          <div className="work-bg__shadow" aria-hidden="true" />
+
+      {/* 🟢 Make the whole card clickable */}
+      <Link to="/loan-servicing" className="work-card-link">
+        <div className="work-card">
+          <div className="work-bg">
+            <img src={background} alt="Loan Servicing project background" className="work-bg__img" />
+            <div className="work-bg__shadow" aria-hidden="true" />
+          </div>
+          <Chips />
+          <BottomText />
         </div>
-        <Chips />
-        <BottomText />
-      </div>
+      </Link>
     </section>
   );
 }
