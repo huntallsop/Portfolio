@@ -299,6 +299,128 @@
 }
 
 /* =========================
+   KEY CHALLENGES SECTION
+   (matches your existing JSX)
+========================= */
+
+/* Centered section variant */
+.case-study__section--key-challenges {
+  margin-top: 80px;
+}
+
+.case-study__section-label--center {
+  width: 100%;
+  text-align: center;
+  font-size: 32px; /* slightly larger heading */
+}
+
+/* Centered body + intro text */
+.case-study__section-body--center {
+  align-items: center;
+  text-align: center;
+}
+
+.case-study__body-text--center {
+  text-align: center;
+}
+
+.case-study__key-intro {
+  max-width: 796px;
+  margin: 0 auto 32px;
+}
+
+/* Row of three quote cards */
+.case-study__quotes-row {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Individual quote card */
+.case-study__quote-card {
+  flex: 1 1 0;
+  min-width: 220px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* subtle blue overlay on dark base like Figma */
+  background:
+    linear-gradient(
+      90deg,
+      rgba(81, 162, 255, 0.05) 0%,
+      rgba(81, 162, 255, 0.05) 100%
+    ),
+    #1f2c42;
+}
+
+/* Quote text */
+.case-study__quote-text {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9caec8;
+}
+
+/* Footer: avatar + name/role */
+.case-study__quote-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Avatar circle (teal gradient) */
+.case-study__quote-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  color: #f9f9f9;
+
+  background: linear-gradient(
+    180deg,
+    rgb(152, 222, 221) 0%,
+    rgb(93, 190, 189) 100%
+  );
+}
+
+/* extra modifier if you want different colors later */
+.case-study__quote-avatar--teal {
+  /* same gradient for now */
+}
+
+/* Name + role */
+.case-study__quote-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.case-study__quote-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #f9f9f9;
+}
+
+.case-study__quote-role {
+  font-size: 11px;
+  font-weight: 300;
+  color: #9caec8;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -320,6 +442,19 @@
     width: 100%;
     height: auto;
   }
+
+  /* Key challenges: stack cards */
+  .case-study__quotes-row {
+    flex-direction: column;
+  }
+
+  .case-study__quote-card {
+    width: 100%;
+  }
+
+  .case-study__section-label--center {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -339,5 +474,9 @@
 
   .case-study__subtitle {
     font-size: 16px;
+  }
+
+  .case-study__key-intro {
+    text-align: left;
   }
 }
