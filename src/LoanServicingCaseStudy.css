@@ -1,23 +1,24 @@
 /* =========================
-   BASE CASE STUDY LAYOUT
+   BASE LAYOUT
 ========================= */
 
 .case-study {
+  min-height: 100vh;
   background-color: #111f36;
   color: #fff;
   font-family: "Inter", system-ui, sans-serif;
   line-height: 1.6;
 }
 
-/* Main layout */
+/* Main content (everything below the gradient header) */
 .case-study__main {
   max-width: 800px;
   margin: 0 auto;
-  padding: 24px 16px 48px;
+  padding: 48px 16px 64px;
 }
 
 /* =========================
-   HERO TOP SECTION (Full Width Gradient)
+   FULL-WIDTH GRADIENT HERO SECTION
 ========================= */
 
 .case-study__hero-section {
@@ -25,33 +26,64 @@
   position: relative;
   background: linear-gradient(180deg, #0e1525 0%, #111f36 45%, #172a4c 100%);
   color: #fff;
+  padding: 24px 16px 80px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-  padding-bottom: 80px;
-  text-align: center;
-  overflow: hidden;
 }
 
-/* Inner content (centered 800px max) */
+/* Inner top content (centered, 800px wide) */
 .case-study__top {
   max-width: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  z-index: 2;
+  gap: 48px;
 }
 
-/* Pills row */
+/* =========================
+   BACK BUTTON
+========================= */
+
+.case-study__header {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 3;
+}
+
+.case-study__back {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.case-study__back-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.case-study__back:hover {
+  opacity: 1;
+  transform: translateX(-2px);
+}
+
+/* =========================
+   TAG PILL BAR (single background)
+========================= */
+
 .case-study__tags-row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(194, 199, 206, 0.1); /* unified translucent bar */
+  background: rgba(194, 199, 206, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   padding: 8px 16px;
@@ -59,31 +91,37 @@
 }
 
 .case-study__tag-pill {
-  background: none; /* remove per-pill background */
+  background: none;
   border: none;
   padding: 0;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.4px;
-  color: white;
+  color: #ffffff;
 }
 
 .case-study__tag-dot {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff;
   opacity: 0.8;
 }
 
-/* Title + subtitle */
+/* =========================
+   TITLE + SUBTITLE
+========================= */
+
+.case-study__title-block {
+  text-align: center;
+}
+
 .case-study__title {
   font-size: 56px;
   font-weight: 300;
   background: linear-gradient(90deg, #f9f9f9, #6d7a8e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: center;
   line-height: 1.1;
   margin-bottom: 16px;
 }
@@ -91,8 +129,8 @@
 .case-study__subtitle {
   font-size: 24px;
   color: #90a1b9;
-  text-align: center;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .case-study__subtitle-highlight-green {
@@ -105,7 +143,10 @@
   font-weight: 600;
 }
 
-/* Summary row (12 weeks · Lead Designer · B2B FinTech) */
+/* =========================
+   SUMMARY ROW (12 weeks etc.)
+========================= */
+
 .case-study__summary-row {
   display: flex;
   justify-content: center;
@@ -139,30 +180,8 @@
   background-color: #fe9a00;
 }
 
-/* =========================
-   BACK BUTTON
-========================= */
-.case-study__header {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 3;
-}
-
-.case-study__back {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  opacity: 0.9;
-  transition: all 0.2s ease;
-}
-
-.case-study__back:hover {
-  opacity: 1;
-  transform: translateX(-2px);
+.case-study__summary-text {
+  font-size: 12px;
 }
 
 /* =========================
@@ -172,9 +191,7 @@
 .case-study__hero {
   display: flex;
   justify-content: center;
-  padding: 60px 0;   
-  padding-bottom: 0px;
-
+  padding: 60px 0;
 }
 
 .case-study__hero-image-wrapper {
@@ -195,8 +212,8 @@
 .case-study__hero-border {
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(144, 161, 185, 0.2);
   border-radius: 12px;
+  border: 1px solid rgba(144, 161, 185, 0.2);
   pointer-events: none;
 }
 
@@ -206,6 +223,10 @@
 
 .case-study__section {
   margin-top: 80px;
+}
+
+.case-study__section--last {
+  margin-bottom: 40px;
 }
 
 .case-study__section-label {
@@ -233,7 +254,7 @@
   padding: 16px 24px;
   font-size: 12px;
   line-height: 20px;
-  color: #fff;
+  color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -270,7 +291,7 @@
 
 .case-study__bold {
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* =========================
@@ -281,18 +302,38 @@
   .case-study__title {
     font-size: 40px;
   }
+
   .case-study__subtitle {
     font-size: 18px;
   }
+
   .case-study__meta-row {
     flex-direction: column;
     gap: 32px;
   }
-}
 
-@media (max-width: 640px) {
   .case-study__hero-image-wrapper {
     width: 100%;
     height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-study__header {
+    top: 16px;
+    left: 16px;
+  }
+
+  .case-study__hero-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .case-study__title {
+    font-size: 32px;
+  }
+
+  .case-study__subtitle {
+    font-size: 16px;
   }
 }
