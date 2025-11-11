@@ -101,7 +101,8 @@
 
 
 .case-study__subtitle {
-  margin: 0;
+  margin-left: 16px;
+  margin-right: 16px;
   font-size: 25px;
   line-height: 42px;
   color: #90a1b9;
