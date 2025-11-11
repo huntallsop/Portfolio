@@ -92,8 +92,13 @@
   line-height: 1.1;
   background: linear-gradient(90deg, #f9f9f9, #6d7a8e);
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* ensures full gradient render */
   color: transparent;
+  display: inline-block; /* prevents line clipping */
+  padding-bottom: 4px; /* add breathing room under descenders */
+  overflow: visible; /* fix any remaining clipping */
 }
+
 
 .case-study__subtitle {
   margin: 0;
