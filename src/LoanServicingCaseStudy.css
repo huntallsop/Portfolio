@@ -43,12 +43,37 @@
 /* 🔹 NEW TOP SECTION (TAGS + TITLE + SMALL ROW) */
 
 .case-study__top {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 48px;
   margin-bottom: 56px;
+  padding: 100px 16px 80px;
+  color: #fff;
+
+  /* 🎨 Gradient background — extracted from your Figma blues */
+  background: linear-gradient(
+    180deg,
+    #0e1525 0%,
+    #111f36 45%,
+    #172a4c 100%
+  );
 }
+
+.case-study__top::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(17,31,54,0) 0%, rgba(17,31,54,1) 100%);
+  pointer-events: none;
+}
+
 
 /* Tag pills row: UX/UI Design · Product strategy · 2025 */
 .case-study__tags-row {
@@ -316,11 +341,6 @@
 
   .case-study__header {
     padding-top: 16px;
-  }
-
-  .case-study__top {
-    gap: 32px;
-    margin-bottom: 40px;
   }
 
   .case-study__title {
