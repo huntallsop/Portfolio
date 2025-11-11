@@ -162,16 +162,18 @@
 
 /* HERO IMAGE */
 .case-study__hero {
-  margin-bottom: 48px;
+  display: flex;
+  justify-content: center; /* horizontally center */
+  align-items: center;      /* vertically center if needed */
+  padding: 60px 0;          /* optional spacing around image */
 }
 
 .case-study__hero-image-wrapper {
   width: 800px;
   height: 497px;
-  margin: 0 auto; /* center it */
-  position: relative;
   border-radius: 12px;
   overflow: hidden;
+  position: relative;
 }
 
 .case-study__hero-image {
