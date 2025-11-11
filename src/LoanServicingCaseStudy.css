@@ -20,26 +20,23 @@
 /* =========================
    FULL-WIDTH GRADIENT HERO SECTION
 ========================= */
-
 .case-study__hero-section {
   width: 100%;
+  min-height: 100vh; /* full viewport height */
   position: relative;
   background: linear-gradient(180deg, #0e1525 0%, #111f36 45%, #172a4c 100%);
   color: #fff;
-  padding: 24px 16px 80px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  align-items: center; /* centers content vertically */
+  padding: 0 16px; /* remove large padding, center via flex */
 }
+
 
 /* Inner top content (centered, 800px wide) */
 .case-study__top {
-  max-width: 800px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
+  margin-top: 40px; /* pushes content down slightly below back arrow */
 }
 
 /* =========================
