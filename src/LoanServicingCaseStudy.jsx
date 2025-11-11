@@ -2,6 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import heroImage from "./assets/Tellerdashboard.png";
 import "./LoanServicingCaseStudy.css";
+function ScrollIndicator() {
+  return (
+    <div className="case-study__scroll-indicator" aria-hidden="true">
+      <div className="case-study__scroll-indicator-inner" />
+    </div>
+  );
+}
+
 
 export default function LoanServicingCaseStudy() {
   return (
