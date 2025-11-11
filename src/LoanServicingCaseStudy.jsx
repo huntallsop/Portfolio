@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import heroImage from "./assets/Tellerdashboard.png";
 import "./LoanServicingCaseStudy.css";
+
 function ScrollIndicator() {
   return (
     <div className="case-study__scroll-indicator" aria-hidden="true">
@@ -9,7 +10,6 @@ function ScrollIndicator() {
     </div>
   );
 }
-
 
 export default function LoanServicingCaseStudy() {
   return (
@@ -72,6 +72,11 @@ export default function LoanServicingCaseStudy() {
               />
               <span className="case-study__summary-text">B2B FinTech</span>
             </div>
+          </div>
+
+          {/* Scroll indicator centered under the summary row */}
+          <div className="case-study__scroll-indicator-wrapper">
+            <ScrollIndicator />
           </div>
         </div>
       </section>
