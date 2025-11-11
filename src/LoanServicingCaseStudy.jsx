@@ -6,68 +6,70 @@ import "./LoanServicingCaseStudy.css";
 export default function LoanServicingCaseStudy() {
   return (
     <div className="case-study">
-      {/* 🔙 Back link — stays visible on gradient */}
-      <header className="case-study__header">
-        <Link to="/" className="case-study__back">
-          <span className="case-study__back-icon" aria-hidden="true">
-            ←
-          </span>
-          <span>Back to home</span>
-        </Link>
-      </header>
+      {/* Full-width gradient header area */}
+      <section className="case-study__hero-section">
+        {/* Back link sits on top of the gradient */}
+        <header className="case-study__header">
+          <Link to="/" className="case-study__back">
+            <span className="case-study__back-icon" aria-hidden="true">
+              ←
+            </span>
+            <span>Back to home</span>
+          </Link>
+        </header>
 
-      <main className="case-study__main">
-        {/* 🔹 HERO SECTION WITH FULL-WIDTH GRADIENT */}
-        <section className="case-study__hero-section">
-          <div className="case-study__top">
-            {/* Pills: UX/UI Design · Product strategy · 2025 */}
-            <div className="case-study__tags-row">
-              <div className="case-study__tag-pill">UX/UI Design</div>
-              <span className="case-study__tag-dot" aria-hidden="true" />
-              <div className="case-study__tag-pill">Product strategy</div>
-              <span className="case-study__tag-dot" aria-hidden="true" />
-              <div className="case-study__tag-pill">2025</div>
+        {/* Figma-style top content inside 800px max width */}
+        <div className="case-study__top">
+          {/* Pills: UX/UI Design · Product strategy · 2025 */}
+          <div className="case-study__tags-row">
+            <div className="case-study__tag-pill">UX/UI Design</div>
+            <span className="case-study__tag-dot" aria-hidden="true" />
+            <div className="case-study__tag-pill">Product strategy</div>
+            <span className="case-study__tag-dot" aria-hidden="true" />
+            <div className="case-study__tag-pill">2025</div>
+          </div>
+
+          {/* Title + subtitle line with percentages */}
+          <div className="case-study__title-block">
+            <h1 className="case-study__title">Revamping Loan Servicing</h1>
+            <p className="case-study__subtitle">
+              Designing a scalable, user-centered lending platform that reduced
+              processing time by{" "}
+              <span className="case-study__subtitle-highlight-green">67%</span>{" "}
+              and increased customer satisfaction scores by{" "}
+              <span className="case-study__subtitle-highlight-blue">45%</span>.
+            </p>
+          </div>
+
+          {/* Small row: 12 weeks · Lead Designer · B2B FinTech */}
+          <div className="case-study__summary-row">
+            <div className="case-study__summary-item">
+              <span
+                className="case-study__summary-dot case-study__summary-dot--blue"
+                aria-hidden="true"
+              />
+              <span className="case-study__summary-text">12 weeks</span>
             </div>
-
-            {/* Title + subtitle line with percentages */}
-            <div className="case-study__title-block">
-              <h1 className="case-study__title">Revamping Loan Servicing</h1>
-              <p className="case-study__subtitle">
-                Designing a scalable, user-centered lending platform that reduced
-                processing time by{" "}
-                <span className="case-study__subtitle-highlight-green">67%</span>{" "}
-                and increased customer satisfaction scores by{" "}
-                <span className="case-study__subtitle-highlight-blue">45%</span>.
-              </p>
+            <div className="case-study__summary-item">
+              <span
+                className="case-study__summary-dot case-study__summary-dot--green"
+                aria-hidden="true"
+              />
+              <span className="case-study__summary-text">Lead Designer</span>
             </div>
-
-            {/* Small row: 12 weeks · Lead Designer · B2B FinTech */}
-            <div className="case-study__summary-row">
-              <div className="case-study__summary-item">
-                <span
-                  className="case-study__summary-dot case-study__summary-dot--blue"
-                  aria-hidden="true"
-                />
-                <span className="case-study__summary-text">12 weeks</span>
-              </div>
-              <div className="case-study__summary-item">
-                <span
-                  className="case-study__summary-dot case-study__summary-dot--green"
-                  aria-hidden="true"
-                />
-                <span className="case-study__summary-text">Lead Designer</span>
-              </div>
-              <div className="case-study__summary-item">
-                <span
-                  className="case-study__summary-dot case-study__summary-dot--orange"
-                  aria-hidden="true"
-                />
-                <span className="case-study__summary-text">B2B FinTech</span>
-              </div>
+            <div className="case-study__summary-item">
+              <span
+                className="case-study__summary-dot case-study__summary-dot--orange"
+                aria-hidden="true"
+              />
+              <span className="case-study__summary-text">B2B FinTech</span>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
+      {/* All content below the gradient */}
+      <main className="case-study__main">
         {/* HERO IMAGE */}
         <section className="case-study__hero">
           <div className="case-study__hero-image-wrapper">
