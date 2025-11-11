@@ -21,6 +21,13 @@
   overflow: hidden;
   padding: 0;
   box-sizing: border-box;
+
+  /* make the card behave like a clickable tile */
+  display: block;              /* important now that it's a <Link> */
+  text-decoration: none;       /* remove underline */
+  color: inherit;              /* keep existing text color */
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
 .work-bg {
@@ -120,14 +127,18 @@
   .work-chips { left: 16px; bottom: 120px; }
   .work-bottom { left: 16px; right: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
 }
-.work-card-link {
-  display: block;
-  text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
 
-/* Hover state */
-.work-card-link:hover .work-card {
+/* Hover / focus state for the clickable card */
+.work-card:hover,
+.work-card:focus-visible {
   transform: translateY(-4px);
   opacity: 0.95;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Optional: slight zoom on the background image when hovering */
+.work-card:hover .work-bg__img,
+.work-card:focus-visible .work-bg__img {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
