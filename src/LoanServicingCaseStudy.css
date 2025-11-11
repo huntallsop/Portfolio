@@ -95,7 +95,7 @@
   -webkit-text-fill-color: transparent; /* ensures full gradient render */
   color: transparent;
   display: inline-block; /* prevents line clipping */
-  padding-bottom: 4px; /* add breathing room under descenders */
+  padding-bottom: 8px; /* add breathing room under descenders */
   overflow: visible; /* fix any remaining clipping */
 }
 
