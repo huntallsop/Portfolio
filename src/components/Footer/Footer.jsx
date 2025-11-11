@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-const footerBgUrl = new URL("../../assets/footer-bg.png", import.meta.url).toString();
+const footerBgUrl = new URL("../../assets/Light.png", import.meta.url).toString();
 // Fallback if needed:
 // import footerBg from "../../assets/footer-bg.png";
 // const footerBgUrl = footerBg;
