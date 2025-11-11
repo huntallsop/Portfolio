@@ -20,6 +20,7 @@
 /* =========================
    FULL-WIDTH GRADIENT HERO SECTION
 ========================= */
+
 .case-study__hero-section {
   width: 100%;
   min-height: 100vh; /* full viewport height */
@@ -30,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center; /* centers content vertically */
-  padding: 0 16px; /* remove large padding, center via flex */
+  padding: 0 16px;
 }
 
 /* Inner top content (centered, 800px wide) */
@@ -79,11 +80,11 @@
 }
 
 /* =========================
-   TAG PILL BAR (single background)
+   TAG PILL BAR
 ========================= */
 
 .case-study__tags-row {
-  display: inline-flex; /* inline makes it hug its content width */
+  display: inline-flex; /* hugs content width */
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -222,7 +223,7 @@
 }
 
 /* =========================
-   CONTENT SECTIONS
+   GENERIC CONTENT SECTIONS
 ========================= */
 
 .case-study__section {
@@ -300,22 +301,25 @@
 
 /* =========================
    KEY CHALLENGES SECTION
-   (matches your existing JSX)
 ========================= */
 
-/* Centered section variant */
 .case-study__section--key-challenges {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
-.case-study__section-label--center {
+/* Override label in this section to match Figma */
+.case-study__section--key-challenges .case-study__section-label {
   width: 100%;
   text-align: center;
-  font-size: 32px; /* slightly larger heading */
+  font-size: 40px;
+  letter-spacing: 0.18px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  color: #f9f9f9;
 }
 
-/* Centered body + intro text */
 .case-study__section-body--center {
+  width: 100%;
   align-items: center;
   text-align: center;
 }
@@ -327,29 +331,30 @@
 .case-study__key-intro {
   max-width: 796px;
   margin: 0 auto 32px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9caec8;
 }
 
-/* Row of three quote cards */
+/* 3 quote cards row */
 .case-study__quotes-row {
   width: 100%;
+  max-width: 800px;
   display: flex;
   gap: 12px;
   justify-content: space-between;
   align-items: stretch;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* keep 3 in a row on desktop */
 }
 
-/* Individual quote card */
 .case-study__quote-card {
   flex: 1 1 0;
-  min-width: 220px;
+  min-width: 0;
   border-radius: 8px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  /* subtle blue overlay on dark base like Figma */
   background:
     linear-gradient(
       90deg,
@@ -359,7 +364,6 @@
     #1f2c42;
 }
 
-/* Quote text */
 .case-study__quote-text {
   margin: 0 0 24px;
   font-size: 14px;
@@ -367,14 +371,12 @@
   color: #9caec8;
 }
 
-/* Footer: avatar + name/role */
 .case-study__quote-footer {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-/* Avatar circle (teal gradient) */
 .case-study__quote-avatar {
   width: 36px;
   height: 36px;
@@ -382,12 +384,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.25px;
   color: #f9f9f9;
-
   background: linear-gradient(
     180deg,
     rgb(152, 222, 221) 0%,
@@ -395,12 +395,11 @@
   );
 }
 
-/* extra modifier if you want different colors later */
+/* if you ever want different colors later */
 .case-study__quote-avatar--teal {
   /* same gradient for now */
 }
 
-/* Name + role */
 .case-study__quote-meta {
   display: flex;
   flex-direction: column;
@@ -443,16 +442,17 @@
     height: auto;
   }
 
-  /* Key challenges: stack cards */
+  /* Key challenges: stack cards on tablet */
   .case-study__quotes-row {
     flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .case-study__quote-card {
     width: 100%;
   }
 
-  .case-study__section-label--center {
+  .case-study__section--key-challenges .case-study__section-label {
     font-size: 28px;
   }
 }
@@ -474,9 +474,5 @@
 
   .case-study__subtitle {
     font-size: 16px;
-  }
-
-  .case-study__key-intro {
-    text-align: left;
   }
 }
