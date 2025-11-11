@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./work.css";
 import background from "../../assets/LoanServicing.png";
 
@@ -37,14 +38,16 @@ export default function Work() {
   return (
     <section className="work" aria-labelledby="work-title">
       <h2 id="work-title" className="sr-only">Work</h2>
-      <div className="work-card">
-        <div className="work-bg">
-          <img src={background} alt="" className="work-bg__img" />
-          <div className="work-bg__shadow" aria-hidden="true" />
+      <Link to="/case-studies/loan-servicing" className="block group">
+        <div className="work-card">
+          <div className="work-bg">
+            <img src={background} alt="" className="work-bg__img" />
+            <div className="work-bg__shadow" aria-hidden="true" />
+          </div>
+          <Chips />
+          <BottomText />
         </div>
-        <Chips />
-        <BottomText />
-      </div>
+      </Link>
     </section>
   );
 }
