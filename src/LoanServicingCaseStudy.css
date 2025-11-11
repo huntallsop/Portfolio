@@ -196,7 +196,7 @@
 .case-study__hero {
   display: flex;
   justify-content: center;
-  padding: 60px 0;
+  padding: 0;
 }
 
 .case-study__hero-image-wrapper {
