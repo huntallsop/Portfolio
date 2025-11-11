@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 import heroImage from "./assets/Tellerdashboard.png";
 import "./LoanServicingCaseStudy.css";
 
-function ScrollIndicator() {
-  return (
-    <div className="case-study__scroll-indicator" aria-hidden="true">
-      <div className="case-study__scroll-indicator-inner" />
-    </div>
-  );
-}
-
 export default function LoanServicingCaseStudy() {
   return (
     <div className="case-study">
@@ -72,11 +64,6 @@ export default function LoanServicingCaseStudy() {
               />
               <span className="case-study__summary-text">B2B FinTech</span>
             </div>
-          </div>
-
-          {/* Scroll indicator centered under the summary row */}
-          <div className="case-study__scroll-indicator-wrapper">
-            <ScrollIndicator />
           </div>
         </div>
       </section>
@@ -187,7 +174,7 @@ export default function LoanServicingCaseStudy() {
         </section>
 
         {/* HYPOTHESIS */}
-        <section className="case-study__section case-study__section--last">
+        <section className="case-study__section">
           <div className="case-study__section-label">Hypothesis</div>
           <div className="case-study__section-body">
             <p className="case-study__body-text">
@@ -196,6 +183,81 @@ export default function LoanServicingCaseStudy() {
               enable tellers to complete transactions faster, lower the risk of
               errors, and improve overall efficiency.
             </p>
+          </div>
+        </section>
+
+        {/* ⭐ NEW SECTION: KEY CHALLENGES */}
+        <section className="case-study__section case-study__section--key-challenges">
+          <div className="case-study__section-label case-study__section-label--center">
+            Key challenges
+          </div>
+
+          <div className="case-study__section-body case-study__section-body--center">
+            <p className="case-study__body-text case-study__body-text--center case-study__key-intro">
+              To validate our hypothesis, we conducted{" "}
+              <span className="case-study__bold">interviews with 10 users</span>{" "}
+              (bank tellers, administrative staff, and account managers) to
+              understand their challenges around the teller dashboard workflows
+              and payment processes. These interviews revealed critical
+              insights:
+            </p>
+
+            <div className="case-study__quotes-row">
+              {/* Card 1 */}
+              <article className="case-study__quote-card">
+                <p className="case-study__quote-text">
+                  “There’s so much crammed onto the screen that I’ve definitely
+                  clicked the wrong button more than once. You have to double
+                  check everything.”
+                </p>
+                <div className="case-study__quote-footer">
+                  <div className="case-study__quote-avatar case-study__quote-avatar--teal">
+                    SC
+                  </div>
+                  <div className="case-study__quote-meta">
+                    <div className="case-study__quote-name">Sarah C.</div>
+                    <div className="case-study__quote-role">
+                      Senior loan officer
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              {/* Card 2 */}
+              <article className="case-study__quote-card">
+                <p className="case-study__quote-text">
+                  “It shouldn’t take this many steps to do a simple transfer. I
+                  know the workflow by heart, but it still eats up time.”
+                </p>
+                <div className="case-study__quote-footer">
+                  <div className="case-study__quote-avatar case-study__quote-avatar--teal">
+                    MR
+                  </div>
+                  <div className="case-study__quote-meta">
+                    <div className="case-study__quote-name">Michael R.</div>
+                    <div className="case-study__quote-role">Teller</div>
+                  </div>
+                </div>
+              </article>
+
+              {/* Card 3 */}
+              <article className="case-study__quote-card">
+                <p className="case-study__quote-text">
+                  “A customer will ask about a transaction from last week, and
+                  it takes forever to find it. The search tool just isn’t
+                  helpful.”
+                </p>
+                <div className="case-study__quote-footer">
+                  <div className="case-study__quote-avatar case-study__quote-avatar--teal">
+                    JP
+                  </div>
+                  <div className="case-study__quote-meta">
+                    <div className="case-study__quote-name">Jennifer P.</div>
+                    <div className="case-study__quote-role">Teller</div>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
       </main>
