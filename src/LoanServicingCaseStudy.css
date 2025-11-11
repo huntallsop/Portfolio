@@ -1,353 +1,50 @@
-.case-study {
-  min-height: 100vh;
-  background: #111f36;
-  color: #f9f9f9;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+/* Full-width hero background gradient */
+.case-study__hero-section {
+  width: 100%;
+  position: relative;
+  background: linear-gradient(180deg, #0e1525 0%, #111f36 45%, #172a4c 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* TOP BAR WITH BACK LINK */
+/* Centered inner content */
+.case-study__top {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Back button styling (stays over gradient) */
 .case-study__header {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 24px 16px 0;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 3;
 }
 
 .case-study__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #90a1b9;
+  color: #fff;
   text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
 }
 
 .case-study__back:hover {
-  color: #ffffff;
+  opacity: 1;
   transform: translateX(-2px);
-}
-
-.case-study__back-icon {
-  font-size: 16px;
-}
-
-/* MAIN LAYOUT */
-.case-study__main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 24px 16px 48px;
-}
-
-/* 🔹 NEW TOP SECTION (TAGS + TITLE + SMALL ROW) */
-
-.case-study__top {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 48px;
-  margin-bottom: 56px;
-  padding: 100px 16px 80px;
-  color: #fff;
-
-  /* 🎨 Gradient background — extracted from your Figma blues */
-  background: linear-gradient(
-    180deg,
-    #0e1525 0%,
-    #111f36 45%,
-    #172a4c 100%
-  );
-}
-
-.case-study__top::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(17,31,54,0) 0%, rgba(17,31,54,1) 100%);
-  pointer-events: none;
-}
-
-
-/* Tag pills row: UX/UI Design · Product strategy · 2025 */
-.case-study__tags-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 4px;
-  background: rgba(194, 199, 206, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.case-study__tag-pill {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  text-transform: none;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.case-study__tag-dot {
-  width: 3px;
-  height: 3px;
-  border-radius: 999px;
-  background: #ffffff;
-  display: inline-block;
-}
-
-/* Title + subtitle */
-
-.case-study__title-block {
-  max-width: 800px;
-  text-align: center;
-}
-
-.case-study__title {
-  margin: 0 0 24px 0;
-  font-size: 57px;
-  font-weight: 300;
-  line-height: 1.1;
-  background: linear-gradient(90deg, #f9f9f9, #6d7a8e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* ensures full gradient render */
-  color: transparent;
-  display: inline-block; /* prevents line clipping */
-  padding-bottom: 8px; /* add breathing room under descenders */
-  overflow: visible; /* fix any remaining clipping */
-}
-
-
-.case-study__subtitle {
-  margin-left: 16px;
-  margin-right: 16px; 
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 25px;
-  line-height: 42px;
-  color: #90a1b9;
-}
-
-.case-study__subtitle-highlight-green {
-  font-weight: 600;
-  color: #00d492;
-}
-
-.case-study__subtitle-highlight-blue {
-  font-weight: 600;
-  color: #51a2ff;
-}
-
-/* Small summary row: 12 weeks · Lead Designer · B2B FinTech */
-
-.case-study__summary-row {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  justify-content: center;
-}
-
-.case-study__summary-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.case-study__summary-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-}
-
-.case-study__summary-dot--blue {
-  background: #51a2ff;
-}
-
-.case-study__summary-dot--green {
-  background: #00d492;
-}
-
-.case-study__summary-dot--orange {
-  background: #fe9a00;
-}
-
-.case-study__summary-text {
-  font-size: 12px;
-  color: #90a1b9;
-  letter-spacing: 0.15px;
-  white-space: nowrap;
-}
-
-/* HERO IMAGE */
-.case-study__hero {
-  display: flex;
-  justify-content: center; /* horizontally center */
-  align-items: center;      /* vertically center if needed */
-  padding: 60px 0;          /* optional spacing around image */
-}
-
-.case-study__hero-image-wrapper {
-  width: 800px;
-  height: 497px;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-}
-
-.case-study__hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.case-study__hero-border {
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  border: 1px solid rgba(144, 161, 185, 0.2);
-  pointer-events: none;
-}
-
-/* SECTIONS */
-.case-study__section {
-  display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 36px;
-  margin-bottom: 60px;
-}
-
-.case-study__section--last {
-  margin-bottom: 0;
-}
-
-.case-study__section-label {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.18px;
-  text-transform: uppercase;
-  color: #f9f9f9;
-}
-
-.case-study__section-body {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #9caec8;
-}
-
-/* OVERVIEW INTRO + HIGHLIGHT */
-.case-study__intro {
-  margin: 0 0 16px 0;
-}
-
-.case-study__highlight {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-  padding: 16px 24px;
-  font-size: 12px;
-  line-height: 1.6;
-  color: #ffffff;
-}
-
-.case-study__bold {
-  font-weight: 700;
-  color: #ffffff;
-}
-
-/* META ROW */
-.case-study__meta-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-  margin: 0 0 80px 0;
-}
-
-.case-study__meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.case-study__meta-label {
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15px;
-}
-
-.case-study__meta-text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #f9f9f9;
-}
-
-/* BODY TEXT */
-.case-study__body-text {
-  margin: 0 0 12px 0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .case-study__section {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .case-study__section-label {
-    font-size: 20px;
-  }
-
-  .case-study__meta-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .case-study__hero-image {
-    height: 260px;
-  }
-
-  .case-study__title {
-    font-size: 40px;
-  }
-
-  .case-study__subtitle {
-    font-size: 20px;
-    line-height: 1.4;
-  }
-
-  .case-study__summary-row {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 600px) {
-  .case-study__meta-row {
-    grid-template-columns: 1fr;
-  }
-
-  .case-study__hero-image {
-    height: 220px;
-  }
-
-  .case-study__main {
-    padding: 16px 16px 32px;
-  }
-
-  .case-study__header {
-    padding-top: 16px;
-  }
-
-  .case-study__title {
-    font-size: 32px;
-  }
-
-  .case-study__subtitle {
-    font-size: 18px;
-  }
+  transition: all 0.2s ease;
 }
