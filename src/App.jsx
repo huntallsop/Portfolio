@@ -8,13 +8,15 @@ import LoanServicingCaseStudy from "./LoanServicingCaseStudy"; // ⬅️ add thi
 
 function HomePage() {
   return (
-    <main>
-      <Hero />
-      <PastCompanies />
-      <Work />
-      <Hello />
-      <Footer />
-    </main>
+    <div className="border-4 border-yellow-400 p-4">
+      <main>
+        <Hero />
+        <PastCompanies />
+        <Work />
+        <Hello />
+        <Footer />
+      </main>
+    </div>
   );
 }
 
