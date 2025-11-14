@@ -9,6 +9,7 @@ import LoanServicingCaseStudy from "./LoanServicingCaseStudy"; // ⬅️ add thi
 function HomePage() {
   return (
     <div className="border-4 border-yellow-400 p-4">
+      <div className="bg-red-500 text-white text-center py-4">TAILWIND TEST BANNER</div>
       <main>
         <Hero />
         <PastCompanies />
